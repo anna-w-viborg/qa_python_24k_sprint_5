@@ -10,6 +10,7 @@ driver = webdriver.Chrome()
 
 #после авторизации клик по кнопке "Выйти" выходит из аккаунта
 def test_button_logout_click_logout_happen (self, autorization):
+    driver = webdriver.Chrome()
     driver.autorization()
 
     driver.find_element(*locators.button_logout).click()
