@@ -38,9 +38,9 @@ class Locators:
     button_fillings = (By.XPATH, './/span[text()="Начинки"')
 
     #заголовки разделов
-    h_bans = (By.XPATH, ".//h2[@class='text text_type_main-medium mb-6 mt-10' and text()='Булки']")
-    h_sauces = (By.XPATH, ".//h2[@class='text text_type_main-medium mb-6 mt-10' and text()='Соусы']")
-    h_fillings = (By.XPATH, ".//h2[@class='text text_type_main-medium mb-6 mt-10' and text()='Начинки']")
+    h_bans = (By.XPATH, ".//div[text()='Булки' and contains (@class = 'current')]")
+    h_sauces = (By.XPATH, ".//div[text()='Соусы' and contains (@class = 'current')]")
+    h_fillings = (By.XPATH, ".//div[text()='Начинки' and  contains (@class = 'current')]")
 
 
 

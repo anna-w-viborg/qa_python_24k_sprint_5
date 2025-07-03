@@ -11,22 +11,22 @@ class TestMainButtons:
     def test_click_sauces_scroll_to_sauces(self,driver):
 
         driver.find_element(*locators.button_sauces).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_sauces)
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_sauces))
 
-        assert driver.find_element(*Locators.h_sauces).text == 'Соусы'
+        assert driver.find_element(contains (@class = 'current')).text == 'Соусы'
 
 #проверка клика по начинкам
     def test_click_fillings_scroll_to_fillings(self, driver):
 
         driver.find_element(*locators.button_fillings).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_fillings)
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_fillings))
 
-        assert driver.find_element(*Locators.h_fillings).text == 'Начинки'
+        assert driver.find_element(contains (@class = 'current')).text == 'Начинки'
 
     # проверка клика по булкам
 
     def test_click_bans_scroll_to_bans(self, driver):
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_sauces)
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_sauces))
 
-        assert driver.find_element(*Locators.h_bans).text == 'Булки'
+        assert driver.find_element(contains (@class = 'current')).text == 'Булки'
