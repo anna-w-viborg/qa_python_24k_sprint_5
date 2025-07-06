@@ -13,7 +13,10 @@ class TestMainButtons:
         driver.find_element(*locators.button_sauces).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_sauces))
 
-        assert driver.find_element(contains (@class = 'current')).text == 'Соусы'
+        WebDriverWait(driver, 5).until(expected_conditions).presence_of_element_located(*Locators.h_active).is_displayed()
+        active_tab = WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.h_active))
+
+        assert "Соусы" in active_tab.text
 
 #проверка клика по начинкам
     def test_click_fillings_scroll_to_fillings(self, driver):
@@ -21,12 +24,20 @@ class TestMainButtons:
         driver.find_element(*locators.button_fillings).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_fillings))
 
-        assert driver.find_element(contains (@class = 'current')).text == 'Начинки'
+        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(*Locators.h_active)).is_displayed()
+        active_tab = WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.h_active))
 
-    # проверка клика по булкам
+        assert "Начинки" in active_tab.text
 
+# проверка клика по булкам
     def test_click_bans_scroll_to_bans(self, driver):
 
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_sauces))
+        driver.find_element(*locators.button_bans).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*locators.h_bans))
 
-        assert driver.find_element(contains (@class = 'current')).text == 'Булки'
+        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(*Locators.h_active)).is_displayed()
+        active_tab = WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(*Locators.h_active))
+
+        assert "Булки" in active_tab.text
+
+

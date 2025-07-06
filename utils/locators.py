@@ -33,14 +33,15 @@ class Locators:
     button_logout = (By.XPATH, './/button[text()="Выход"]')
 
     #кнопки ингредиентов
-    button_bans = (By.XPATH, './/span[text()="Булки"')
-    button_sauces = (By.XPATH, './/span[text()="Соусы"')
-    button_fillings = (By.XPATH, './/span[text()="Начинки"')
+    button_bans = (By.XPATH, './/span[text()="Булки"]')
+    button_sauces = (By.XPATH, './/span[text()="Соусы"]')
+    button_fillings = (By.XPATH, './/span[text()="Начинки"]')
 
     #заголовки разделов
     h_bans = (By.XPATH, ".//div[text()='Булки' and contains (@class = 'current')]")
     h_sauces = (By.XPATH, ".//div[text()='Соусы' and contains (@class = 'current')]")
     h_fillings = (By.XPATH, ".//div[text()='Начинки' and  contains (@class = 'current')]")
 
-
+    #активный раздел
+    h_active = (By.XPATH, '//div[contains(@class, "tab_tab_type_current")]')
 
